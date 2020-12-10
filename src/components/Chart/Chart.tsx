@@ -1,11 +1,13 @@
 import React from 'react';
-import Plot from 'react-plotly.js';
+import createPlotlyComponent from 'react-plotly.js/factory';
+import Plotly from 'plotly.js';
 import styles from './Chart.module.css';
 
 interface ChartProps {
     values: any[];
     labels: any[];
 }
+const Plot = createPlotlyComponent(Plotly);
 
 const Chart = (props: ChartProps) => {
     return (
