@@ -11,10 +11,18 @@ import Chart from './components/Chart/Chart';
 class App extends Component {
     state = {
         var3: 10,
+        chartValues: [1, 3, 5],
+        chartLabels: ['leftClick', 'rightClick', 'shits'],
     };
 
     incrementVar = () => {
         this.setState({ var3: this.state.var3 + 1 });
+    };
+
+    incrementChartValue = () => {
+        const chartValues = [...this.state.chartValues];
+        chartValues[0]++;
+        this.setState({ chartValues });
     };
 
     render() {
@@ -58,7 +66,8 @@ class App extends Component {
                         </Route>
 
                         <Route path={'/chart'}>
-                            <Chart />
+                            <Page1 var3={this.state.var3} incrementVar={this.incrementChartValue} />
+                            <Chart values={this.state.chartValues} labels={this.state.chartLabels} />
                         </Route>
 
                         <Redirect to={'/page1'} />

@@ -1,0 +1,6 @@
+.Chart {
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    background: whitesmoke;
+}
